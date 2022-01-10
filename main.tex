@@ -1,0 +1,82 @@
+% Preamble
+\documentclass[letterpaper, 12pt]{article}
+
+% Paragraph jumps and indentation
+\setlength{\parskip}{1.6em}
+\setlength{\parindent}{1.25cm}
+
+% Border
+\usepackage[includefoot, left=1in, right=1in, top=1in, bottom=0.75in]{geometry}
+
+% Footer
+\usepackage{fancyhdr}
+\fancyhf{}
+\rfoot{\textit{\thepage}}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\pagestyle{fancy}
+
+% Packages
+\usepackage[dvipsnames]{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{siunitx}
+\usepackage[english]{babel}
+\usepackage{microtype}
+
+% Spacing
+\usepackage{setspace}
+\doublespacing
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{6pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing{\subsection}{0pt}{6pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing{\subsubsection}{0pt}{6pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+% Fonts
+\usepackage{fontspec}
+\setmainfont{Calibri}
+
+% Images
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+\usepackage{float}
+
+% Tables
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabu}
+\titleformat{\section}
+{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Equation numbering
+\counterwithin{equation}{section}
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+
+% Document Information
+\newcommand{\thetitle}{Latent Heat Calorimetry}
+\author{Grant Lemons}
+\date{\today}
+
+% Wordcount Setup
+\newcommand{\wordcount}{\input|"texcount -1 -sum */*.tex"}
+
+% Subfile Setup
+\usepackage{subfiles}
+
+\begin{document}
+
+% Include data table
+\subfile{sections/data-table.tex}
+
+\section{Analysis}
+\subfile{sections/analysis.tex}
+
+\section{Error \& Evaluation}
+\subfile{sections/error-and-evaluation.tex}
+
+\end{document}
