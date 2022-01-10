@@ -58,7 +58,8 @@
 \urlstyle{same}
 
 % Document Information
-\newcommand{\thetitle}{Latent Heat Calorimetry}
+\newcommand{\thetitle}{Ambition and Expantion in Buisness}
+\newcommand{\researchquestion}{In what ways does a positive growth oriented mindset affect opportunity in the buisness world?}
 \author{Grant Lemons}
 \date{\today}
 
@@ -70,13 +71,25 @@
 
 \begin{document}
 
-% Include data table
-\subfile{sections/data-table.tex}
+% Title Page
+\begin{titlepage}
+\begin{center}
+\vspace*{6.3cm}
+\textbf{\Huge \thetitle}\\
+\textit{\researchquestion}\\
+\vspace{2.5cm}
+\textit{Word count: \wordcount}\\
+\vspace{0.6cm}
+\textit{\today}\\
 
-\section{Analysis}
-\subfile{sections/analysis.tex}
+\end{center}
+\end{titlepage}
 
-\section{Error \& Evaluation}
-\subfile{sections/error-and-evaluation.tex}
+% Table of Contents
+\subfile{sections/Contents.tex}
+\newpage
+
+\section{Moon Bridge}
+\subfile{sections/MoonBridge.tex}
 
 \end{document}
