@@ -35,8 +35,8 @@
 \titleformat{\chapter}[display]{\vspace{-1.8cm}\normalfont\bfseries}{}{0pt}{\Large}
 \newcommand{\insertTitlePage}{
 	\centering
-        \setcounter{page}{1}
-        \pagenumbering{roman}
+	\setcounter{page}{1}
+	\pagenumbering{roman}
 	\vspace*{6.3cm}
 	\textbf{\huge\thetitle}\\
 	\vspace*{0.5cm}
@@ -45,10 +45,8 @@
 	\textit{Word count: \wordcount}\\
 	\vspace{0.6cm}
 	\textit{\today}\\
-        \flushleft
+	\flushleft
 	\newpage
-	\setcounter{page}{1}
-        \pagenumbering{arabic}
 }
 
 % Link setup
