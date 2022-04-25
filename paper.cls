@@ -13,6 +13,15 @@
 \usepackage{microtype}
 \usepackage[export]{adjustbox}
 
+% Typefaces
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Charter}
+\setsansfont[Ligatures=TeX,
+	UprightFont = *OT-Regular,
+	ItalicFont = *OT-Italic,
+	BoldFont = *OT-Bold,
+	BoldItalicFont = *OT-BoldItalic]{Kievit}
+
 % Spacing
 \usepackage{setspace}
 \singlespacing
