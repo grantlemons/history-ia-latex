@@ -16,15 +16,9 @@
 % Typefaces
 \usepackage{fontspec}
 \setmainfont[Ligatures=TeX]{Charter}
-\setsansfont[Ligatures=TeX,
-	UprightFont = *OT-Regular,
-	ItalicFont = *OT-Italic,
-	BoldFont = *OT-Bold,
-	BoldItalicFont = *OT-BoldItalic]{Kievit}
 
 % Spacing
 \usepackage{setspace}
-\singlespacing
 \usepackage{titlesec}
 \titlespacing{\chapter}{0pt}{0pt}{0pt}
 \titlespacing{\section}{0pt}{0pt}{0pt}
@@ -39,11 +33,12 @@
 \usepackage{subfiles}
 
 % Misc Setup
-\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{\large}
-\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
-\titleformat{\chapter}[display]{\vspace{-1.8cm}\normalfont\bfseries}{}{0pt}{\Large}
+\titleformat{\subsection}{\singlespacing\normalfont\normalsize\bfseries}{\thesubsection}{1em}{\large}
+\titleformat{\section}{\singlespacing\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\chapter}[display]{\singlespacing\vspace{-1.8cm}\normalfont\bfseries}{}{0pt}{\Large}
 \newcommand{\insertTitlePage}{
 	\centering
+	\singlespacing
 	\setcounter{page}{1}
 	\pagenumbering{roman}
 	\vspace*{6.3cm}
@@ -52,8 +47,6 @@
 	\textit{\researchquestion}\\
 	\vspace{2.5cm}
 	\textit{Word count: \wordcount}\\
-	\vspace{0.6cm}
-	\textit{\today}\\
 	\flushleft
 	\newpage
 }
@@ -61,9 +54,11 @@
 % Link setup
 \usepackage{hyperref}    
 \hypersetup{
-    colorlinks=true, %set true if you want colored links
+    hidelinks=true,
+    colorlinks=false, %set true if you want colored links
     linktoc=all,     %set to all if you want both sections and subsections linked
     linkcolor=black,  %choose some color if you want links to stand out
+    citecolor=black,
 }
 
 \endinput
