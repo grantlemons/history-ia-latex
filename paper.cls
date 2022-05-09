@@ -39,8 +39,6 @@
 \newcommand{\insertTitlePage}{
 	\centering
 	\singlespacing
-	\setcounter{page}{1}
-	\pagenumbering{roman}
 	\vspace*{6.3cm}
 	\textbf{\huge\thetitle}\\
 	\vspace*{0.5cm}
