@@ -13,10 +13,6 @@
 \usepackage{microtype}
 \usepackage[export]{adjustbox}
 
-% Typefaces
-\usepackage{fontspec}
-\usepackage{Charter}
-
 % Spacing
 \usepackage{setspace}
 \usepackage{titlesec}
@@ -46,6 +42,7 @@
 	\vspace{2.5cm}
 	\textit{Word count: \wordcount}\\
 	\flushleft
+	\thispagestyle{empty}
 	\newpage
 }
 
@@ -57,6 +54,7 @@
     linktoc=all,     %set to all if you want both sections and subsections linked
     linkcolor=black,  %choose some color if you want links to stand out
     citecolor=black,
+    urlcolor=black,
 }
 
 \endinput
