@@ -1,17 +1,3 @@
 {
-
-    "latex-workshop.latex.tools": [{
-    "name": "latexmk",
-    "command": "latexmk",
-    "args": [
-        "-aux-directory=aux-files",
-        "-xelatex",
-        //"-synctex=1",
-        "-interaction=nonstopmode",
-        "-enable-write18",
-        "-file-line-error",
-        "%DOC%"
-    ]
-}]
-
+    "editor.formatOnSave": false,
 }
