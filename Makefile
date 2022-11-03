@@ -3,7 +3,7 @@
 
 COMPILER = xelatex
 OUTPUT = build
-FILENAME = IA
+FILENAME = history-ia
 OPTIONS = -interaction=nonstopmode -output-directory=${OUTPUT}
 
 all: build bib build clean
