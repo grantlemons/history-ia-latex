@@ -3,11 +3,7 @@
 
 % Preamble
 \LoadClass[letterpaper, 12pt]{article}
-\usepackage[includefoot, left=1in, right=1in, top=1in, bottom=0.5in]{geometry}
-
-% Paragraph jump and intents
-\setlength{\parskip}{1em}
-\setlength{\parindent}{0em}
+\usepackage[includefoot, left=1in, right=1in, top=1in, bottom=1in]{geometry}
 
 % Package mass import
 \usepackage{microtype}
