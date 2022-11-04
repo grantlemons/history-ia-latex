@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := auto_build
-.PHONY: all auto_build build bib clean
+.PHONY: all auto_build remote convert build bib clean
 
 COMPILER = xelatex
 OUTPUT = build
@@ -19,6 +19,9 @@ remote:
 	@scp -r ./* desktop:/tmp/latex/${FILENAME}
 	@ssh desktop 'cd /tmp/latex/${FILENAME} && make'
 	@scp desktop:/tmp/latex/${FILENAME}/${FILENAME}.pdf .
+
+convert:
+	@pandoc ${FILENAME}.tex --bibliography=bibliography.bib -o ${FILENAME}.docx
 
 build:
 	@echo "Compiling document"
