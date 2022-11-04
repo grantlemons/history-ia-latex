@@ -3,11 +3,12 @@
 
 % Preamble
 \LoadClass[letterpaper, 12pt]{article}
-\usepackage[includefoot, left=1in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
 
 % Package mass import
 \usepackage{microtype}
 \usepackage[export]{adjustbox}
+\usepackage[parfill]{parskip}
 
 % Spacing
 \usepackage{setspace}
