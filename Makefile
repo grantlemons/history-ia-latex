@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := auto_build
+.DEFAULT_GOAL := all
 .PHONY: all auto_build remote build bib clean
 
 COMPILER = xelatex
@@ -6,7 +6,7 @@ OUTPUT = build
 FILENAME = history-ia
 OPTIONS = -interaction=nonstopmode -output-directory=${OUTPUT}
 
-all: auto_build clean markdown docx
+all: auto_build markdown docx
 
 auto_build:
 	@${make_build_dir}
@@ -19,6 +19,9 @@ markdown:
 
 docx:
 	@pandoc --wrap=none --bibliography bibliography.bib -f latex -t docx ${FILENAME}.tex -o ${FILENAME}.docx
+
+count:
+	@pandoc --lua-filter=wordcount.lua history-ia.tex
 
 remote:
 	@ssh desktop 'rm -r /tmp/latex/${FILENAME}/ ; mkdir -p /tmp/latex/${FILENAME}/'

@@ -9,4 +9,5 @@
 !*.cls
 !*.tex
 !*.bib
+!*.lua
 !Makefile
