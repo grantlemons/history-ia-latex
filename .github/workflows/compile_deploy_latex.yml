@@ -6,7 +6,7 @@ jobs:
     env:
       # Edit here with the names of your latex file and directory (can use ".")
       DIR: .
-      FILE: IA
+      FILE: history-ia
     steps:
       - name: Checkout
         uses: actions/checkout@v2
