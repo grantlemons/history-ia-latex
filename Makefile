@@ -1,12 +1,12 @@
 .DEFAULT_GOAL := auto_build
-.PHONY: all auto_build remote convert build bib clean
+.PHONY: all auto_build remote build bib clean
 
 COMPILER = xelatex
 OUTPUT = build
 FILENAME = history-ia
 OPTIONS = -interaction=nonstopmode -output-directory=${OUTPUT}
 
-all: build bib build clean
+all: auto_build clean markdown docx
 
 auto_build:
 	@${make_build_dir}
@@ -14,14 +14,17 @@ auto_build:
 	@latexmk -${COMPILER} ${OPTIONS} ${FILENAME}
 	@${copy_pdf}
 
+markdown:
+	@pandoc --wrap=none --bibliography bibliography.bib -f latex -t markdown ${FILENAME}.tex -o ${FILENAME}.md
+
+docx:
+	@pandoc --wrap=none --bibliography bibliography.bib -f latex -t docx ${FILENAME}.tex -o ${FILENAME}.docx
+
 remote:
 	@ssh desktop 'rm -r /tmp/latex/${FILENAME}/ ; mkdir -p /tmp/latex/${FILENAME}/'
 	@scp -r ./* desktop:/tmp/latex/${FILENAME}
 	@ssh desktop 'cd /tmp/latex/${FILENAME} && make'
 	@scp desktop:/tmp/latex/${FILENAME}/${FILENAME}.pdf .
-
-convert:
-	@pandoc ${FILENAME}.tex --bibliography=bibliography.bib -o ${FILENAME}.docx
 
 build:
 	@echo "Compiling document"
@@ -38,7 +41,6 @@ clean:
 	@${copy_pdf}
 	@echo "Cleaning up..."
 	@rm -r build || true
-	@rm ${FILENAME}.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,out,run.xml,xdv} xelatex* x.log || true
 
 gitclean:
 	@echo "Cleaning up ignored files..."
