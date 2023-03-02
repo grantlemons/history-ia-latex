@@ -21,7 +21,7 @@ docx:
 	@pandoc --wrap=none --bibliography bibliography.bib -f latex -t docx ${FILENAME}.tex -o ${FILENAME}.docx
 
 count:
-	@pandoc --lua-filter=wordcount.lua history-ia.tex
+	@pandoc --lua-filter=wordcount.lua ${FILENAME}.tex
 
 remote:
 	@ssh desktop 'rm -r /tmp/latex/${FILENAME}/ ; mkdir -p /tmp/latex/${FILENAME}/'
